@@ -1,0 +1,56 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const formBiodata = document.getElementById('formBiodata');
+    formBiodata.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Data Berhasil Ditampilkan');
+        const nama = document.getElementsByName('nama')[0].value;
+        const kelas = document.getElementsByName('kelas')[0].value;
+        const fakultas = document.getElementsByName('fakultas')[0].value;
+        const univ = document.getElementsByName('univ')[0].value;
+        const tgllahir = document.getElementsByName('tgllahir')[0].value;
+        const tempatlahir = document.getElementsByName('tempatlahir')[0].value;
+        const jk = document.querySelector('input[name="jk"]:checked').value === '0' ? 'Laki-Laki' : 'Perempuan';
+        const agama = document.getElementsByName('agama')[0].value;
+        const gd = document.querySelector('input[name="gd"]:checked').value;
+        const alamat = document.getElementsByName('alamat')[0].value;
+        const kota = document.getElementsByName('kota')[0].value;
+        const provinsi = document.getElementsByName('provinsi')[0].value;
+        const warga = document.getElementsByName('warga')[0].value;
+        const telp = document.getElementsByName('telp')[0].value;
+        const tampilData = document.getElementById('tampil-data');
+        const content = `
+            <h3>Tampil Biodata</h3>
+            <div class="biodata-display">
+                <div class="label">NAMA LENGKAP:</div>
+                <div class="value">${nama}</div>
+                <div class="label">KELAS:</div>
+                <div class="value">${kelas}</div>
+                <div class="label">FAKULTAS:</div>
+                <div class="value">${fakultas}</div>
+                <div class="label">UNIVERSITAS:</div>
+                <div class="value">${univ}</div>
+                <div class="label">TANGGAL LAHIR:</div>
+                <div class="value">${tgllahir}</div>
+                <div class="label">TEMPAT LAHIR:</div>
+                <div class="value">${tempatlahir}</div>
+                <div class="label">JENIS KELAMIN:</div>
+                <div class="value">${jk}</div>
+                <div class="label">AGAMA:</div>
+                <div class="value">${agama}</div>
+                <div class="label">GOLONGAN DARAH:</div>
+                <div class="value">${gd}</div>
+                <div class="label">ALAMAT:</div>
+                <div class="value">${alamat}</div>
+                <div class="label">KOTA:</div>
+                <div class="value">${kota}</div>
+                <div class="label">PROVINSI:</div>
+                <div class="value">${provinsi}</div>
+                <div class="label">KEWARGANEGARAAN:</div>
+                <div class="value">${warga}</div>
+                <div class="label">NO. TELEPON:</div>
+                <div class="value">${telp}</div>
+            </div>
+        `;
+        tampilData.innerHTML = content;
+    });
+});
